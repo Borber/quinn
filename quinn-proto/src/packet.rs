@@ -230,6 +230,7 @@ impl Packet {
             Header::Short { .. } => SHORT_RESERVED_BITS,
             _ => LONG_RESERVED_BITS,
         };
+        let aaa = self.header_data[0];
         self.header_data[0] & mask == 0
     }
 }
